@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+import com.atguigu.order.feign.ProductFeignClient;
 import com.atguigu.order.model.Order;
 import com.atguigu.order.service.OrderService;
 import com.atguigu.product.model.Product;
@@ -29,9 +30,13 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     LoadBalancerClient loadBalancerClient;
 
+    @Autowired
+    ProductFeignClient productFeignClient;
+
     @Override
     public Order createOrder(Long productId, Long userId) {
-        Product product = getProductFromRemoteWithLoadBalanceAnnotation(productId);
+
+        Product product = productFeignClient.getProductById(productId);
         Order order = new Order();
         order.setId(1L);
         // TODO

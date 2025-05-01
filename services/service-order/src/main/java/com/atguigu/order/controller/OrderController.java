@@ -22,6 +22,7 @@ public class OrderController {
     @GetMapping("/config")
     public String config() {
         return "order.timeout="+orderProperties.getTimeout()+",order.auto-confirm="+orderProperties.getAutoConfirm();
+//                +",order.db-url="+orderProperties.getDbUrl();
     }
 
     @GetMapping("/create")

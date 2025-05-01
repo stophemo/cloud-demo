@@ -1,0 +1,15 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: service-product
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        namespace: dev
+
+  config:
+    import:
+      - nacos:common.properties?group=order
+      - nacos:database.properties?group=order
