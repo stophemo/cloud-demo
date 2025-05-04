@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.atguigu.order.feign.ProductFeignClient;
 import com.atguigu.order.model.Order;
 import com.atguigu.order.service.OrderService;
@@ -33,6 +35,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     ProductFeignClient productFeignClient;
 
+    @SentinelResource(value = "createOrder", blockHandler = "createOrderFallback")
     @Override
     public Order createOrder(Long productId, Long userId) {
 
@@ -46,6 +49,18 @@ public class OrderServiceImpl implements OrderService {
         order.setAddress("atguigu");
         // TODO
         order.setProductList(Arrays.asList(product));
+
+        return order;
+    }
+
+    // 兜底回调
+    public Order createOrderFallback(Long productId, Long userId, BlockException ex) {
+        Order order = new Order();
+        order.setId(0L);
+        order.setTotalAmount(new BigDecimal("0"));
+        order.setUserId(userId);
+        order.setNickName("未知用户");
+        order.setAddress("异常信息: " + ex.getClass());
 
         return order;
     }

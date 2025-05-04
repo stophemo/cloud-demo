@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 @RestController
 public class ProductController {
 
@@ -19,6 +21,12 @@ public class ProductController {
                               HttpServletRequest request) {
         String token = request.getHeader("X-token");
         System.out.println(" 被调用........ token=【" + token + "】");
+//        int i = 10 / 0;
+//        try {
+//            TimeUnit.SECONDS.sleep(2);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         return productService.getProductById(productId);
     }
 }
