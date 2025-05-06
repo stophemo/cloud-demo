@@ -1,0 +1,35 @@
+# 忽略编译/构建输出目录
+/target/
+/build/
+/out/
+
+# 忽略 IDE 配置文件
+/.idea/
+/.iml
+/.project
+/.classpath
+/.settings/
+
+# 忽略本地配置文件（例如 Spring 的 application.properties）
+/application.properties
+/application.yml
+
+# 忽略日志文件
+/logs/
+*.log
+
+# 忽略临时文件
+/temp/
+/tmp/
+
+# 忽略 Maven/Gradle 缓存
+/.m2/
+/.gradle/
+
+# 忽略 Docker 构建中间文件
+/Dockerfile.build
+/docker-compose.override.yml
+
+# 忽略敏感信息文件
+/.env
+/config/secrets/
