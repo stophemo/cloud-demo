@@ -33,3 +33,5 @@
 # 忽略敏感信息文件
 /.env
 /config/secrets/
+.idea/
+/*.class
