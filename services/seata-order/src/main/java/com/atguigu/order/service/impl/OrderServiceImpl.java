@@ -15,7 +15,6 @@ public class OrderServiceImpl implements OrderService {
     OrderTblMapper orderTblMapper;
 
 
-
     @Autowired
     AccountFeignClient accountFeignClient;
 
@@ -37,13 +36,11 @@ public class OrderServiceImpl implements OrderService {
         //3、保存订单
         orderTblMapper.insert(orderTbl);
 
-        int i = 10/0;
-
         return orderTbl;
     }
 
     // 计算价格
     private int calculate(String commodityCode, int orderCount) {
-        return 9*orderCount;
+        return 9 * orderCount;
     }
 }

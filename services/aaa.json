@@ -1,7 +1,7 @@
 {
   "@class": "org.apache.seata.rm.datasource.undo.BranchUndoLog",
-  "xid": "192.168.200.1:8091:6260609896044851214",
-  "branchId": 6260609896044851215,
+  "xid": "192.168.31.104:8091:378950238037827601",
+  "branchId": 378950238037827602,
   "sqlUndoLogs": [
     "java.util.ArrayList",
     [

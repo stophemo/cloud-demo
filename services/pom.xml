@@ -11,6 +11,10 @@
 
     <packaging>pom</packaging>
     <modules>
+        <module>seata-account</module>
+        <module>seata-business</module>
+        <module>seata-order</module>
+        <module>seata-storage</module>
         <module>service-product</module>
         <module>service-order</module>
     </modules>
@@ -55,6 +59,10 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
     </dependencies>
 

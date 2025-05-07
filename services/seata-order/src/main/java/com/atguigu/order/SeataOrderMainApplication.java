@@ -7,8 +7,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
-
 @EnableFeignClients(basePackages = "com.atguigu.order.feign")
 @EnableTransactionManagement
 @MapperScan("com.atguigu.order.mapper")

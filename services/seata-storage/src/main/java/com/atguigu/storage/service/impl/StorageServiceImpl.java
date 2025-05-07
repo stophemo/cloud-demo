@@ -12,8 +12,6 @@ public class StorageServiceImpl implements StorageService {
     @Autowired
     StorageTblMapper storageTblMapper;
 
-
-
     @Transactional
     @Override
     public void deduct(String commodityCode, int count) {
